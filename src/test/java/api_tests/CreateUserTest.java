@@ -8,7 +8,7 @@ import services.ReqResService;
 public class CreateUserTest {
 
     @Test
-    public void test_CreateUserTest() {
+    public void createUserTest() {
         User user = new User();
         user.setName("Anderson");
         user.setJob("Tester");

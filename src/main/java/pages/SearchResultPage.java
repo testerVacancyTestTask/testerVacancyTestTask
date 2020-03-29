@@ -1,18 +1,18 @@
 package pages;
 
-import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.CollectionCondition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selectors;
-import org.testng.Assert;
 
-import static com.codeborne.selenide.Selectors.byCssSelector;
+import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class SearchResultPage {
 
     public SearchResultPage checkSearchResultContainsLink(String expectedLink) {
-        Assert.assertTrue($$(byCssSelector("#search .g a"))
-                .findBy(Condition.attribute("href")).attr("href").equals(expectedLink));
+        ElementsCollection coll = $$("#search .g .r > a:not([class])").shouldBe(sizeGreaterThan(0));
+        coll.shouldHave(CollectionCondition.anyMatch("", p -> p.getAttribute("href").equals(expectedLink)));
         return this;
     }
 

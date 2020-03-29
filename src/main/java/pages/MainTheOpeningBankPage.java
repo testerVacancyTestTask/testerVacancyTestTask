@@ -3,12 +3,12 @@ package pages;
 import blocks.InternetBankingExchangingBlock;
 
 import static com.codeborne.selenide.Selectors.byClassName;
-import static com.codeborne.selenide.Selenide.element;
+import static com.codeborne.selenide.Selenide.$;
 
 public class MainTheOpeningBankPage {
 
     public InternetBankingExchangingBlock getInternetBankingExchangingBlock() {
-        element(byClassName("main-page-exchange"));
+        $(byClassName("main-page-exchange"));
         return new InternetBankingExchangingBlock();
     }
 }

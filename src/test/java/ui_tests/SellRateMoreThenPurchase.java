@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class SellRateMoreThenPurchase extends BaseUITest {
 
     @Test
-    public void test_SellRateMoreThenPurchase() {
+    public void sellRateMoreThenPurchase() {
         pages().getGoogleHomePage()
                 .openPage()
                 .searchWithGoogleByText("Открытие");

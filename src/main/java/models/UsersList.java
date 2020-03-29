@@ -19,4 +19,12 @@ public class UsersList {
 
     public UsersList() {
     }
+
+    public List<ExistingUser> getData() {
+        return data;
+    }
+
+    public Ad getAd() {
+        return ad;
+    }
 }
